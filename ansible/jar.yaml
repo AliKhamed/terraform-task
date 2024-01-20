@@ -11,3 +11,4 @@
         owner: ubuntu
         group: ubuntu
         mode: '0644'
+        remote_src: true
