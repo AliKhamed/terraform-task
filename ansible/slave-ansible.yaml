@@ -1,0 +1,19 @@
+- name: slave testing and installation playbook
+  hosts: slave
+  remote_user: ubuntu
+  become: yes
+  tasks:
+    - name: update apt
+      apt: 
+        update_cache: yes
+
+    - name: create directory
+      file: 
+        path: /home/ubuntu/jenkins_home
+        state: directory
+        mode: '0777'
+
+    - name: install openjdk
+      apt: 
+        name: openjdk-8-jdk
+        

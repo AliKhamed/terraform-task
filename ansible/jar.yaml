@@ -1,0 +1,12 @@
+- name: copy files for the configuration
+  hosts: slave
+  remote_user: ubuntu
+  become: yes
+  tasks:
+    - name: Copy jar file to private instance
+      ansible.builtin.copy:
+        src: ./agent.jar
+        dest: /home/ubuntu/jenkins_home/agent.jar
+        owner: ubuntu
+        group: ubuntu
+        mode: '0644'
