@@ -5,7 +5,7 @@
   tasks:
     - name: Copy jar file to private instance
       ansible.builtin.copy:
-        src: /tmp/terraform-task/agent.jar
+        src: /home/ubuntu/terraform-task/agent.jar
         dest: /home/ubuntu/jenkins_home/agent.jar
         # dest: /home/ubuntu/jenkins_home/agent.jar
         owner: ubuntu
