@@ -35,7 +35,7 @@ pipeline {
             stage('copy jar file for slave communication') {
                 steps {
                     withAWS(credentials: 'aws', region: 'us-east-1'){
-                    sh 'ansible-playbook -i /var/jenkins_home/hosts ./ansible/jar.yaml'}
+                    sh 'ansible-playbook -i /var/jenkins_home/hosts ./ansible/jar.yaml -vvv'}
                     }
             }
 
