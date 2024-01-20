@@ -4,9 +4,10 @@
   become: yes
   tasks:
     - name: Copy jar file to private instance
-      ansible.builtin.copy:
+      ansible.builtin.template:
         src: ./agent.jar
-        dest: /home/ubuntu/jenkins_home/agent.jar
+        dest: /home/ubuntu/jenkins_home
+        # dest: /home/ubuntu/jenkins_home/agent.jar
         owner: ubuntu
         group: ubuntu
         mode: '0644'
